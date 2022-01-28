@@ -19,7 +19,7 @@ loadAllEveentHandlers();
 
 // Add task to the list
 function addList(e) {
-    if (taskInput.value == ""){
+    if (taskInput.value.trim() == ""){
         alert("Please add a task!")
     } else {
         const task = document.createElement("li");
