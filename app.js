@@ -2,6 +2,7 @@ const taskInput = document.querySelector(".task-input");
 const addBtn = document.querySelector(".add-task");
 const taskList = document.querySelector(".task-list");
 const clearTaskListBtn = document.querySelector(".clear-task-list");
+const taskListPlaceholder = document.querySelector(".task-is-empty");
 
 function loadAllEveentHandlers() {
 	console.log("Event handler loaded");
@@ -56,8 +57,12 @@ function removeTask(e) {
 function checkList() {
 	if (taskList.innerHTML == "") {
 		clearTaskListBtn.classList.add("disabled");
+		taskList.classList.add("d-none");
+		taskListPlaceholder.classList.remove("d-none");
 	} else {
 		clearTaskListBtn.classList.remove("disabled");
+		taskList.classList.remove("d-none");
+		taskListPlaceholder.classList.add("d-none");
 	}
 }
 checkList();
